@@ -104,10 +104,21 @@ body {
           body > div#footer ul li + li {
             margin-left: 5%; }
       body > div#footer a {
-        margin-top: 24px; }
-        body > div#footer a img {
+        margin: 24px 16px 0 16px;
+        display: inline-block; }
+        body > div#footer a#turner img {
           width: 100%;
-          max-width: 121px; }
+          max-width: 121px;
+          margin-bottom: -4px; }
+        body > div#footer a#dmcb_design {
+          font-size: 0.8em;
+          text-align: center;
+          color: #55553f; }
+          body > div#footer a#dmcb_design:hover {
+            text-decoration: none; }
+          body > div#footer a#dmcb_design img {
+            vertical-align: bottom;
+            margin: 0 3px; }
 
 /* For narrow displays or phones */
 @media screen and (max-width: 580px), screen and (max-device-width: 480px) {

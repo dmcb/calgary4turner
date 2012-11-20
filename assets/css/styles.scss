@@ -158,11 +158,28 @@ body {
 			}
 			
 			a {
-				margin-top: 24px;
+				margin: 24px 16px 0 16px;
+				display: inline-block;
 				
-				img {
+				&#turner img {
 					width: 100%;
 					max-width: 121px;
+					margin-bottom: -4px;
+				}
+				
+				&#dmcb_design {
+					font-size: 0.8em;
+					text-align: center;
+					color: #55553f;
+					
+					&:hover {
+						text-decoration: none;
+					}
+					
+					img {
+						vertical-align: bottom;
+						margin: 0 3px;
+					}
 				}
 			}
 		}
