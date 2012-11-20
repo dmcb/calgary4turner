@@ -1,0 +1,7 @@
+# Ignore OS and SASS garbage
+.DS_Store*
+Thumbs.db
+.sass-cache
+
+# Ignore database password file
+assets/php/config.php
