@@ -13,6 +13,7 @@ $(function( $ ) {
 		template: _.template($('#story-template').html()),
 		
 		events: {
+			"click a": "share"
 		},
 		
 		initialize: function() {
@@ -29,6 +30,10 @@ $(function( $ ) {
 			var renderedContent = this.template(doc);
 			$(this.el).html(renderedContent).fadeIn('slow');
 			return this;
+		},
+		
+		share: function() {
+			App.router.navigate(this.model.get('id'), {trigger: true});
 		}
 	});
 	
@@ -37,6 +42,7 @@ $(function( $ ) {
 		template: _.template($('#shared-template').html()),
 		
 		events: {
+			"click #more": "loadStories",
 		},
 		
 		initialize: function() {
@@ -54,17 +60,33 @@ $(function( $ ) {
 			var view = new App.Views.Story({
 				model: story
 			});
-			stories.prepend(view.render().el);
+			stories.append(view.render().el);
+			// If we are out of stories, hide the more button (yes this assumes the oldest story is of id 1)
+			if (story.id == "1") {
+				$('#more').hide();
+			}
 		},
 		
-		addStories: function() {
-			var stories = this.$('.stories');
-			this.collection.each(function(story) {
-				var view = new App.Views.Story({
-					model: story
-				});
-				stories.append(view.render().el);
+		loadStories: function() {
+			console.log('Scroll top: ' + $(window).scrollTop()+200 + ', Doc height: ' + $(document).height() + ', Win height: ' + $(window).height());
+			var additionalStories = new App.Collections.Stories();
+			additionalStories.fetch({
+				url: 'assets/php/crud.php?id=' + App.globalState.get('oldestID'),
+				success: function() {
+					additionalStories.each(function(story) {
+						App.Collections.stories.add(story);
+					});
+					App.globalState.set('oldestID', App.Collections.stories.last().id);
+				}
 			});
+		},
+		
+		newStory: function(story) {
+			var stories = this.$('.stories');
+			var view = new App.Views.Story({
+				model: story
+			});
+			stories.prepend(view.render().el);
 		}
 	});
 });

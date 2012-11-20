@@ -11,14 +11,17 @@ $(function( $ ) {
     App.Routers.AppRouter = Backbone.Router.extend({
 
         routes: {
-            '': 'index'
+            '': 'index',
+            ':id': 'story'
         },
 
         initialize: function(options) {
         	// Define a global state
         	App.global = Backbone.Model.extend({});
         	App.globalState = new App.global;
-        
+        },
+
+        index: function() {
         	// Define collection of stories
         	App.Collections.stories = new App.Collections.Stories();
 			
@@ -29,15 +32,23 @@ $(function( $ ) {
 			});
 			
 			// Bind changing of stories collections to views
-			App.Collections.stories.bind("add", App.Views.shared.addStory, this);
-        	App.Collections.stories.on("reset", function(collection, response){
-				App.Views.shared.addStories();
+        	App.Collections.stories.on("add", function(story, response){
+				App.Views.shared.addStory(story);
 			});
-        },
-
-        index: function() {
+        	App.Collections.stories.on("reset", function(collection, response){
+        		collection.each(function(story) {
+					App.Views.shared.addStory(story);
+				});
+        		// Store oldest story id so we can load additional older ones later
+        		App.globalState.set('oldestID', collection.last().id);
+			});
+        
         	App.Collections.stories.url = 'assets/php/crud.php';
         	App.Collections.stories.fetch();
+        },
+        
+        story: function() {
+	        
         }
     });
 });

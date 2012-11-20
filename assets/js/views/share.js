@@ -66,7 +66,8 @@ $(function( $ ) {
 					if (response.success) {
 						$("#share").html("<span class=\"error\">Thank you for sharing your story!</span>").css('display', 'none').fadeIn('slow');
 						var NewStory = new App.Models.Story(response.success);
-						App.Collections.stories.unshift(NewStory);
+						App.Collections.stories.unshift(NewStory, {silent: true});
+						App.Views.shared.newStory(NewStory);
 					}
 					else if (response.error) {
 						$("#send").attr("disabled", false);

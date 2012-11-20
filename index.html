@@ -33,14 +33,23 @@
 		<div id="shared">
 		</div>
 		<div id="footer">
+			<p>
+				Chris Turner is one of Canada's leading voices on urban sustainability and energy, as well as a prominent advocate for local and national political engagement. In 2009, he co-founded CivicCamp along with Naheed Nenshi. This ambitious civic engagement organization was instrumental in advocating for smart urban policy solutions in Calgary. Turner also served on the board of directors for Sustainable Calgary from 2008 to 2011. He has spoken on energy, climate change and the economy at university campuses, professional conferences and public events across the country. Chris was named one of Alberta's "Next 10" Most Influential People by Alberta Venture and one of Calgary's "Top 40 Under 40" by Avenue Magazine.
+				
+			</p>
+			<ul class="links">
+				<li><a href="http://turner4yyc.ca/ask-turner">See Chris Turner's position on various issues</a></li>
+				<li><a href="http://turner4yyc.ca/?page_id=377">Get a lawn sign</a></li>
+				<li><a href="http://turner4yyc.ca/downloads">Social media icons in support of Chris</a></li>
+			</ul>
 			<a href="http://turner4yyc.ca">
 				<img src="assets/images/turner4yyclogo.png" alt="turner4yyc.ca" />
-				</a>
+			</a>
 		</div>
 		
 		<!-- Templates -->
 		<script id="share-template" type="text/template">
-			<h2>Share why you've chosen to vote for Chris Turner:</h2>
+			<h2>Share why you're inspired to vote for Chris Turner:</h2>
 			
 			<form id="share" class="section">
 				<div class="input">
@@ -56,14 +65,20 @@
 					<label id="story_error" class="error"></label>
 				</div>
 				<div class="input">
+					<label id="error" class="error"></label>
+				</div>
+				<div class="input">
 					<button id="send">Share</button>
 				</div>
 			</form>
 		</script>
 		
 		<script id="shared-template" type="text/template">
-			<h2>See what other Calgarians think of Chris:</h2>
+			<h2>See why other Calgarians are voting for Chris Turner:</h2>
 			<div class="stories">
+			</div>
+			<div class="input">
+				<button id="more">More</button>
 			</div>
 		</script>
 		
@@ -72,9 +87,22 @@
 				<%= story %>
 			</p>
 			<span class="author">
-				<%= name %>
+				<%= name %>,
 			</span>
 			<span class="date">
+				<%= date %>
+			</span>
+			<span class="info">
+				<a>Share this story</a>
+			</span>
+		</script>
+		
+		<script id="share-story-template" type="text/template">
+			<h2>This is <%= name %>'s story</h2>
+			<p>
+				<%= story %>
+			</p>
+			<span class="info">
 				<%= date %>
 			</span>
 		</script>

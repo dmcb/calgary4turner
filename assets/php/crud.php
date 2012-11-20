@@ -36,12 +36,24 @@
 	{
 		if ($_SERVER['REQUEST_METHOD'] == "GET") // Retrieve stories
 		{
-			$result = execute_query("SELECT * FROM story ORDER BY date DESC LIMIT 10");
+			// Check if we are getting stories no later than an ID
+			if (isset($_GET['id'])) {
+				$result = execute_query("SELECT * FROM story WHERE id < ".mysql_real_escape_string($_GET['id'])." ORDER BY date DESC LIMIT 10");
+			}
+			else {
+				$result = execute_query("SELECT * FROM story ORDER BY date DESC LIMIT 10");
+			}
+			
 			if ($result)
 			{
 				while($row = mysql_fetch_array($result))
 				{
-					$response['success'][] = array('id' => $row['id'], 'name' => $row['name'], 'date' => $row['date'], 'story' => $row['story']);
+					$response['success'][] = array(
+						'id' => $row['id'],
+						'name' => $row['name'],
+						'date' => date("g:i a, F jS", strtotime($row['date'])),
+						'story' => preg_replace("/(\n)+/","</p><p>", $row['story'])
+					);
 				}
 			}
 			
@@ -65,14 +77,15 @@
 			// No errors in the data, do post
 			if (!isset($response['error']))
 			{
-				if (execute_query("INSERT INTO story (name, story, ip, date) VALUES ('".mysql_real_escape_string($_POST['name'])."','".mysql_real_escape_string($_POST['story'])."','".$_SERVER['REMOTE_ADDR']."',now())")) 
+				
+				if (execute_query("INSERT INTO story (name, email, story, ip, date) VALUES ('".mysql_real_escape_string(strip_tags($_POST['name']))."','".mysql_real_escape_string($_POST['email'])."','".mysql_real_escape_string(strip_tags($_POST['story']))."','".$_SERVER['REMOTE_ADDR']."',now())")) 
 				{
 					$result = execute_query("SELECT * FROM story WHERE id = ".mysql_insert_id());
 					$row = @mysql_fetch_array($result);
 					$response['success']['id'] = $row['id'];
-					$response['success']['name'] = $_POST['name'];
-					$response['success']['date'] = $row['date'];
-					$response['success']['story'] = $_POST['story'];
+					$response['success']['name'] = $row['name'];
+					$response['success']['date'] = date("g:i a, F jS", strtotime($row['date']));
+					$response['success']['story'] = preg_replace("/(\n)+/","</p><p>", $row['story']);
 				}
 			}
 	

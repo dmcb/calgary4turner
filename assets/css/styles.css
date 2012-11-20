@@ -7,13 +7,50 @@ body {
   background-color: #000;
   color: #fff;
   text-align: center;
-  text-shadow: 2px 4px #363621; }
+  text-shadow: 1px 2px #363621; }
+  body a {
+    color: #a9cd44;
+    font-weight: normal;
+    text-decoration: none; }
+    body a:hover {
+      text-decoration: underline; }
   body h2 {
     font-family: "freight-sans-pro";
     font-weight: 700;
     font-size: 2em;
     color: #a9cd44;
     margin: 0 0 1em 0; }
+  body input, body textarea, body button {
+    font-family: Georgia, serif;
+    border-radius: 4px;
+    border: 0 none;
+    width: 80%;
+    margin: 2px 0;
+    font-size: 1em;
+    padding: 2px;
+    background-color: #55553f;
+    color: #FFF;
+    border: 2px solid transparent;
+    float: center;
+    clear: both;
+    font-family: "freight-sans-pro";
+    font-weight: 300; }
+    body input.error, body textarea.error, body button.error {
+      border: 2px solid #a9cd44; }
+  body label.error {
+    font-size: 0.8em;
+    color: #a9cd44;
+    font-family: "freight-sans-pro";
+    font-weight: 300; }
+  body textarea {
+    height: 128px; }
+  body button {
+    background-color: #a9cd44;
+    max-width: 128px;
+    color: #43432a;
+    cursor: pointer; }
+    body button:hover {
+      background-color: #fff; }
   body > div {
     max-width: 872px;
     margin-left: auto;
@@ -25,36 +62,6 @@ body {
       width: 100%; }
     body > div#share {
       padding-bottom: 16px; }
-      body > div#share input, body > div#share textarea, body > div#share button {
-        font-family: Georgia, serif;
-        border-radius: 4px;
-        border: 0 none;
-        width: 80%;
-        margin: 2px 0;
-        font-size: 1em;
-        padding: 2px;
-        background-color: #55553f;
-        color: #FFF;
-        border: 2px solid transparent;
-        float: center;
-        clear: both;
-        font-family: "freight-sans-pro";
-        font-weight: 300; }
-        body > div#share input.error, body > div#share textarea.error, body > div#share button.error {
-          border: 2px solid #a9cd44; }
-      body > div#share label.error {
-        font-size: 0.8em;
-        color: #a9cd44;
-        font-family: "freight-sans-pro";
-        font-weight: 300; }
-      body > div#share textarea {
-        height: 128px; }
-      body > div#share button {
-        background-color: #a9cd44;
-        max-width: 128px;
-        color: #43432a; }
-        body > div#share button:hover {
-          background-color: #fff; }
     body > div#shared .story {
       width: 80%;
       margin-left: auto;
@@ -69,37 +76,54 @@ body {
         font-family: "freight-sans-pro";
         font-weight: 700;
         font-size: 1.2em;
-        color: #a9cd44;
-        display: block;
-        width: 100%; }
-      body > div#shared .story .date {
+        color: #a9cd44; }
+      body > div#shared .story .date, body > div#shared .story .info {
         font-family: "freight-sans-pro";
         font-weight: 300;
-        color: #a9cd44;
+        color: #a9cd44; }
+      body > div#shared .story .info {
         display: block;
         width: 100%; }
+      body > div#shared .story a {
+        cursor: pointer; }
+        body > div#shared .story a:hover {
+          text-decoration: underline; }
     body > div#footer {
       padding-top: 32px;
-      padding-bottom: 16px; }
-      body > div#footer img {
-        width: 100%;
-        max-width: 121px; }
+      padding-bottom: 16px;
+      color: #a0a082; }
+      body > div#footer p {
+        text-align: left; }
+      body > div#footer ul {
+        display: block;
+        padding: 0 0 2em 0;
+        margin: 0; }
+        body > div#footer ul li {
+          display: inline-block;
+          font-family: "freight-sans-pro"; }
+          body > div#footer ul li + li {
+            margin-left: 5%; }
+      body > div#footer a {
+        margin-top: 24px; }
+        body > div#footer a img {
+          width: 100%;
+          max-width: 121px; }
 
 /* For narrow displays or phones */
 @media screen and (max-width: 580px), screen and (max-device-width: 480px) {
   body {
     font-size: 12px;
-    text-shadow: 1px 2px #363621; }
+    text-shadow: 1px 1px #363621; }
+    body input, body textarea, body button {
+      width: 100%; }
+    body button {
+      max-width: 100%; }
+    body textarea {
+      height: 48px; }
     body > div {
       padding: 4px; }
       body > div#share {
         padding-bottom: 8px; }
-        body > div#share input, body > div#share textarea, body > div#share button {
-          width: 100%; }
-        body > div#share button {
-          max-width: 100%; }
-        body > div#share textarea {
-          height: 48px; }
       body > div#shared .story {
         width: 100%; }
         body > div#shared .story + .story {
