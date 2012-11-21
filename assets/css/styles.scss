@@ -1,8 +1,8 @@
 @mixin easing {
-	transition: 0.3s ease;
-	-moz-transition: 0.3s ease;
-	-webkit-transition: 0.3s ease;
-	-o-transition: 0.3s ease;
+	transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
 }
 
 body {
@@ -99,6 +99,28 @@ body {
 		
 		&#share {
 			padding-bottom: 16px;
+			
+			p, .date {
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: left;
+				padding-bottom: 1em;
+			}
+			
+			.date {
+				display: block;
+				font-family: "freight-sans-pro";
+				font-weight: 300;
+				color: #a9cd44;
+			}
+			
+			.twitter, .facebook {
+				float: left;
+				margin-left: 10%;
+				clear: both;
+				margin-top: 0.5em;
+			}
 		}
 		
 		&#shared {
@@ -107,7 +129,7 @@ body {
 				margin-left: auto;
 				margin-right: auto;
 				text-align: left;
-				padding-bottom: 16px;
+				padding-bottom: 1em;
 
 				
 				&+.story {
@@ -164,10 +186,8 @@ body {
 				li {
 					display: inline-block;
 					font-family: "freight-sans-pro";
-					
-					&+li {
-						margin-left: 5%;
-					}
+					margin-left: 2%;
+					margin-right: 2%;
 				}
 			}
 			

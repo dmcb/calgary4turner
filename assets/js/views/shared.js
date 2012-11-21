@@ -7,6 +7,32 @@ var App = App || {
 
 $(function( $ ) {
 	'use strict';
+	
+	App.Views.ShareStory = Backbone.View.extend({
+		el: "#share",
+		template: _.template($('#share-story-template').html()),
+		
+		initialize: function() {
+			_.bindAll(this);
+			this.render();
+		},
+		
+		render: function() {
+			var doc = {
+				id: this.model.get('id'),
+				name: this.model.get('name'),
+				date: this.model.get('date'),
+				story: this.model.get('story')
+			}
+			var renderedContent = this.template(doc);
+			$(this.el).html(renderedContent).fadeIn('slow');
+			return this;
+		},
+		
+		share: function() {
+			App.router.navigate(this.model.get('id'), {trigger: true});
+		}
+	});
 
 	App.Views.Story = Backbone.View.extend({
 		className: "story",
@@ -68,10 +94,9 @@ $(function( $ ) {
 		},
 		
 		loadStories: function() {
-			console.log('Scroll top: ' + $(window).scrollTop()+200 + ', Doc height: ' + $(document).height() + ', Win height: ' + $(window).height());
 			var additionalStories = new App.Collections.Stories();
 			additionalStories.fetch({
-				url: 'assets/php/crud.php?id=' + App.globalState.get('oldestID'),
+				url: 'assets/php/crud.php?oldest_id=' + App.globalState.get('oldestID'),
 				success: function() {
 					additionalStories.each(function(story) {
 						App.Collections.stories.add(story);

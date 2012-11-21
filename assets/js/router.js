@@ -47,8 +47,16 @@ $(function( $ ) {
         	App.Collections.stories.fetch();
         },
         
-        story: function() {
-	        
+        story: function(id) {
+	        var shareStory = new App.Models.Story();
+	        shareStory.fetch({
+	        	url: 'assets/php/crud.php?id=' + id,
+		        success: function() {
+			    	App.Views.shareStory = new App.Views.ShareStory({
+				    	model: shareStory
+			    	});
+		        }
+	        });
         }
     });
 });

@@ -37,10 +37,10 @@ body {
     clear: both;
     font-family: "freight-sans-pro";
     font-weight: 300;
-    transition: 0.3s ease;
-    -moz-transition: 0.3s ease;
-    -webkit-transition: 0.3s ease;
-    -o-transition: 0.3s ease; }
+    transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease; }
     body input.error, body textarea.error, body button.error {
       border: 2px solid #a9cd44; }
   body label.error {
@@ -69,12 +69,28 @@ body {
       width: 100%; }
     body > div#share {
       padding-bottom: 16px; }
+      body > div#share p, body > div#share .date {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        padding-bottom: 1em; }
+      body > div#share .date {
+        display: block;
+        font-family: "freight-sans-pro";
+        font-weight: 300;
+        color: #a9cd44; }
+      body > div#share .twitter, body > div#share .facebook {
+        float: left;
+        margin-left: 10%;
+        clear: both;
+        margin-top: 0.5em; }
     body > div#shared .story {
       width: 80%;
       margin-left: auto;
       margin-right: auto;
       text-align: left;
-      padding-bottom: 16px; }
+      padding-bottom: 1em; }
       body > div#shared .story + .story {
         border-top: #55553f solid 8px; }
       body > div#shared .story p {
@@ -108,9 +124,9 @@ body {
         list-style: none; }
         body > div#footer ul li {
           display: inline-block;
-          font-family: "freight-sans-pro"; }
-          body > div#footer ul li + li {
-            margin-left: 5%; }
+          font-family: "freight-sans-pro";
+          margin-left: 2%;
+          margin-right: 2%; }
       body > div#footer a {
         margin: 24px 16px 0 16px;
         display: inline-block; }

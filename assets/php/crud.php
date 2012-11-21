@@ -36,11 +36,13 @@
 	{
 		if ($_SERVER['REQUEST_METHOD'] == "GET") // Retrieve stories
 		{
-			// Check if we are getting stories no later than an ID
-			if (isset($_GET['id'])) {
-				$result = execute_query("SELECT * FROM story WHERE id < ".mysql_real_escape_string($_GET['id'])." ORDER BY date DESC LIMIT 10");
+			if (isset($_GET['oldest_id'])) { // Check if we are getting stories no later than an ID
+				$result = execute_query("SELECT * FROM story WHERE id < ".mysql_real_escape_string($_GET['oldest_id'])." ORDER BY date DESC LIMIT 10");
 			}
-			else {
+			else if (isset($_GET['id'])) { // Or if we are getting a specific story
+				$result = execute_query("SELECT * FROM story WHERE id = ".mysql_real_escape_string($_GET['id'])." LIMIT 1");
+			}
+			else { // Otherwise get the latest stories
 				$result = execute_query("SELECT * FROM story ORDER BY date DESC LIMIT 10");
 			}
 			
