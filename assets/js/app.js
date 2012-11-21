@@ -10,5 +10,5 @@ $(document).ready(function() {
 	Backbone.history.start();
 
 	$('input, textarea').placeholder();
-	$('h2').fitText(2.5, { minFontSize: '12px', maxFontSize: '36px' });
+	$('h2').fitText(2.5, { minFontSize: '18px', maxFontSize: '36px' });
 });
