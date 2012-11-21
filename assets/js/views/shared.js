@@ -26,6 +26,13 @@ $(function( $ ) {
 			}
 			var renderedContent = this.template(doc);
 			$(this.el).html(renderedContent).hide().fadeIn('slow');
+			
+			// Reload social media buttons
+			twttr.widgets.load();
+			try{
+				FB.XFBML.parse();
+			}
+			catch(ex){};
 		},
 		
 		share: function() {

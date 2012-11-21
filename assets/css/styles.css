@@ -111,6 +111,7 @@ body {
         body > div#content > div#shared .story a:hover {
           text-decoration: underline; }
     body > div#content > div#footer {
+      clear: both;
       padding-top: 1em;
       padding-bottom: 1em;
       color: #a0a082; }
