@@ -1,5 +1,5 @@
 body {
-  font-family: "ff-tisa-web-pro";
+  font-family: "Abel";
   font-size: 16px;
   font-weight: 400;
   padding: 0;
@@ -35,7 +35,7 @@ body {
     border: 2px solid transparent;
     float: center;
     clear: both;
-    font-family: "freight-sans-pro";
+    font-family: "Abel";
     font-weight: 300;
     transition: 0.5s ease;
     -moz-transition: 0.5s ease;
@@ -46,7 +46,7 @@ body {
   body label.error {
     font-size: 0.8em;
     color: #a9cd44;
-    font-family: "freight-sans-pro";
+    font-family: "Abel";
     font-weight: 300; }
   body textarea {
     height: 128px;
@@ -76,7 +76,7 @@ body {
         padding-bottom: 1em; }
       body > div#content > div#share .date {
         display: block;
-        font-family: "freight-sans-pro";
+        font-family: "Abel";
         font-weight: 300;
         color: #a9cd44; }
       body > div#content > div#share .twitter, body > div#content > div#share .facebook {
@@ -100,7 +100,7 @@ body {
         font-size: 1.2em;
         color: #a9cd44; }
       body > div#content > div#shared .story .date, body > div#content > div#shared .story .info {
-        font-family: "freight-sans-pro";
+        font-family: "Abel";
         font-weight: 300;
         color: #a9cd44; }
       body > div#content > div#shared .story .info {
@@ -126,7 +126,7 @@ body {
         list-style: none; }
         body > div#content > div#footer ul li {
           display: inline-block;
-          font-family: "freight-sans-pro";
+          font-family: "Abel";
           margin-left: 2%;
           margin-right: 2%; }
       body > div#content > div#footer a#turner, body > div#content > div#footer a#dmcb_design {

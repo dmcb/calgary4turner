@@ -6,7 +6,7 @@
 }
 
 body {
-	font-family: "ff-tisa-web-pro";
+	font-family: "Abel";
 	font-size: 16px;
 	font-weight: 400;
 	padding: 0;
@@ -51,7 +51,7 @@ body {
 		border: 2px solid transparent;
 		float: center;
 		clear: both;
-		font-family: "freight-sans-pro";
+		font-family: "Abel";
 		font-weight: 300;
 		@include easing;
 		
@@ -63,7 +63,7 @@ body {
 	label.error {
 		font-size: 0.8em;
 		color: #a9cd44;
-		font-family: "freight-sans-pro";
+		font-family: "Abel";
 		font-weight: 300;
 	}
 	
@@ -110,7 +110,7 @@ body {
 				
 				.date {
 					display: block;
-					font-family: "freight-sans-pro";
+					font-family: "Abel";
 					font-weight: 300;
 					color: #a9cd44;
 				}
@@ -148,7 +148,7 @@ body {
 					}
 					
 					.date, .info {
-						font-family: "freight-sans-pro";
+						font-family: "Abel";
 						font-weight: 300;
 						color: #a9cd44;
 					}
@@ -188,7 +188,7 @@ body {
 					
 					li {
 						display: inline-block;
-						font-family: "freight-sans-pro";
+						font-family: "Abel";
 						margin-left: 2%;
 						margin-right: 2%;
 					}
