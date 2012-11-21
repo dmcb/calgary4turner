@@ -58,89 +58,88 @@ body {
     cursor: pointer; }
     body button:hover {
       background-color: #fff; }
-  body > div {
+  body > div#content > div {
     max-width: 872px;
     margin-left: auto;
     margin-right: auto;
     padding: 8px;
-    background-color: #43432a;
-    overflow: hidden; }
-    body > div#header img {
+    background-color: #43432a; }
+    body > div#content > div#header img {
       width: 100%; }
-    body > div#share {
-      padding-bottom: 16px; }
-      body > div#share p, body > div#share .date {
+    body > div#content > div#share {
+      padding-bottom: 2em; }
+      body > div#content > div#share p, body > div#content > div#share .date {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
         text-align: left;
         padding-bottom: 1em; }
-      body > div#share .date {
+      body > div#content > div#share .date {
         display: block;
         font-family: "freight-sans-pro";
         font-weight: 300;
         color: #a9cd44; }
-      body > div#share .twitter, body > div#share .facebook {
+      body > div#content > div#share .twitter, body > div#content > div#share .facebook {
         float: left;
         margin-left: 10%;
         clear: both;
         margin-top: 0.5em; }
-    body > div#shared .story {
+    body > div#content > div#shared .story {
       width: 80%;
       margin-left: auto;
       margin-right: auto;
       text-align: left;
       padding-bottom: 1em; }
-      body > div#shared .story + .story {
+      body > div#content > div#shared .story + .story {
         border-top: #55553f solid 8px; }
-      body > div#shared .story p {
+      body > div#content > div#shared .story p {
         text-shadow: none; }
-      body > div#shared .story .author {
+      body > div#content > div#shared .story .author {
         font-family: "freight-sans-pro";
         font-weight: 700;
         font-size: 1.2em;
         color: #a9cd44; }
-      body > div#shared .story .date, body > div#shared .story .info {
+      body > div#content > div#shared .story .date, body > div#content > div#shared .story .info {
         font-family: "freight-sans-pro";
         font-weight: 300;
         color: #a9cd44; }
-      body > div#shared .story .info {
+      body > div#content > div#shared .story .info {
         display: block;
         width: 100%; }
-      body > div#shared .story a {
+      body > div#content > div#shared .story a {
         cursor: pointer; }
-        body > div#shared .story a:hover {
+        body > div#content > div#shared .story a:hover {
           text-decoration: underline; }
-    body > div#footer {
+    body > div#content > div#footer {
       padding-top: 32px;
       padding-bottom: 16px;
       color: #a0a082; }
-      body > div#footer p {
+      body > div#content > div#footer p {
         text-align: left; }
-      body > div#footer ul {
+      body > div#content > div#footer ul {
         display: block;
         padding: 0 0 2em 0;
         margin: 0;
         list-style: none; }
-        body > div#footer ul li {
+        body > div#content > div#footer ul li {
           display: inline-block;
           font-family: "freight-sans-pro";
           margin-left: 2%;
           margin-right: 2%; }
-      body > div#footer a {
+      body > div#content > div#footer a {
         margin: 24px 16px 0 16px;
         display: inline-block; }
-        body > div#footer a#turner img {
+        body > div#content > div#footer a#turner img {
           width: 100%;
           max-width: 121px;
           margin-bottom: -4px; }
-        body > div#footer a#dmcb_design {
+        body > div#content > div#footer a#dmcb_design {
           font-size: 0.8em;
           text-align: center;
           color: #55553f; }
-          body > div#footer a#dmcb_design:hover {
+          body > div#content > div#footer a#dmcb_design:hover {
             text-decoration: none; }
-          body > div#footer a#dmcb_design img {
+          body > div#content > div#footer a#dmcb_design img {
             vertical-align: bottom;
             margin: 0 3px; }
 
@@ -155,11 +154,9 @@ body {
       max-width: 100%; }
     body textarea {
       height: 48px; }
-    body > div {
+    body > div#content > div {
       padding: 4px; }
-      body > div#share {
-        padding-bottom: 8px; }
-      body > div#shared .story {
+      body > div#content > div#shared .story {
         width: 100%; }
-        body > div#shared .story + .story {
+        body > div#content > div#shared .story + .story {
           border-top: #55553f solid 4px; } }

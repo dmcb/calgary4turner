@@ -83,13 +83,12 @@ body {
 		}
 	}
 	
-	> div {
+	> div#content > div {
 		max-width: 872px;
 		margin-left: auto;
 		margin-right: auto;
 		padding: 8px;
 		background-color: #43432a;
-		overflow: hidden;
 		
 		&#header {
 			img {
@@ -98,7 +97,7 @@ body {
 		}
 		
 		&#share {
-			padding-bottom: 16px;
+			padding-bottom: 2em;
 			
 			p, .date {
 				width: 80%;
@@ -238,12 +237,8 @@ body {
 			height: 48px;
 		}
 		
-		> div {
+		> div#content > div {
 			padding: 4px;
-		
-			&#share {
-				padding-bottom: 8px;
-			}
 			
 			&#shared .story {
 				width: 100%;

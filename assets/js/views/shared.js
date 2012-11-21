@@ -30,7 +30,7 @@ $(function( $ ) {
 		},
 		
 		share: function() {
-			App.router.navigate(this.model.get('id'), {trigger: true});
+			App.router.navigate(this.model.get('id'));
 		}
 	});
 
