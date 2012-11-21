@@ -89,7 +89,7 @@ body {
       margin-left: auto;
       margin-right: auto;
       text-align: left;
-      padding-bottom: 1em; }
+      padding-bottom: 2em; }
       body > div#content > div#shared .story + .story {
         border-top: #55553f solid 8px; }
       body > div#content > div#shared .story p {
@@ -111,14 +111,14 @@ body {
         body > div#content > div#shared .story a:hover {
           text-decoration: underline; }
     body > div#content > div#footer {
-      padding-top: 32px;
-      padding-bottom: 16px;
+      padding-top: 2em;
+      padding-bottom: 1em;
       color: #a0a082; }
       body > div#content > div#footer p {
         text-align: left; }
       body > div#content > div#footer ul {
         display: block;
-        padding: 0 0 2em 0;
+        padding: 0;
         margin: 0;
         list-style: none; }
         body > div#content > div#footer ul li {
@@ -126,22 +126,24 @@ body {
           font-family: "freight-sans-pro";
           margin-left: 2%;
           margin-right: 2%; }
-      body > div#content > div#footer a {
-        margin: 24px 16px 0 16px;
-        display: inline-block; }
-        body > div#content > div#footer a#turner img {
-          width: 100%;
-          max-width: 121px;
-          margin-bottom: -4px; }
-        body > div#content > div#footer a#dmcb_design {
-          font-size: 0.8em;
-          text-align: center;
-          color: #55553f; }
-          body > div#content > div#footer a#dmcb_design:hover {
-            text-decoration: none; }
-          body > div#content > div#footer a#dmcb_design img {
-            vertical-align: bottom;
-            margin: 0 3px; }
+      body > div#content > div#footer a#turner, body > div#content > div#footer a#dmcb_design {
+        display: inline-block;
+        margin-top: 2em;
+        margin-left: 2%;
+        margin-right: 2%; }
+      body > div#content > div#footer a#turner img {
+        width: 100%;
+        max-width: 121px;
+        margin-bottom: -4px; }
+      body > div#content > div#footer a#dmcb_design {
+        font-size: 0.8em;
+        text-align: center;
+        color: #55553f; }
+        body > div#content > div#footer a#dmcb_design:hover {
+          text-decoration: none; }
+        body > div#content > div#footer a#dmcb_design img {
+          vertical-align: bottom;
+          margin: 0 3px; }
 
 /* For narrow displays or phones */
 @media screen and (max-width: 580px), screen and (max-device-width: 480px) {
