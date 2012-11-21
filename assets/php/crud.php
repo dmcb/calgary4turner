@@ -85,7 +85,7 @@
 				{
 					if (mysql_num_rows($query))
 					{
-						$response['error']['general'] = "We love your enthusiasm for Chris Turner, but you've recently posted your story. Please let everyone else have a turn to share their story!";
+						$response['error']['general'] = "We love your enthusiasm for Chris Turner, but you've recently posted your story. Please let everyone else have a turn to share their own!";
 					}
 					else if (execute_query("INSERT INTO story (name, email, story, ip, date) VALUES ('".mysql_real_escape_string(strip_tags($_POST['name']))."','".mysql_real_escape_string($_POST['email'])."','".mysql_real_escape_string(strip_tags($_POST['story']))."','".$_SERVER['REMOTE_ADDR']."',now())")) 
 					{
