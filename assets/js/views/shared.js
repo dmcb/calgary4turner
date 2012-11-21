@@ -25,8 +25,7 @@ $(function( $ ) {
 				story: this.model.get('story')
 			}
 			var renderedContent = this.template(doc);
-			$(this.el).html(renderedContent).fadeIn('slow');
-			return this;
+			$(this.el).html(renderedContent).hide().fadeIn('slow');
 		},
 		
 		share: function() {
@@ -54,7 +53,7 @@ $(function( $ ) {
 				story: this.model.get('story')
 			}
 			var renderedContent = this.template(doc);
-			$(this.el).html(renderedContent).fadeIn('slow');
+			$(this.el).html(renderedContent).hide().fadeIn('slow');
 			return this;
 		},
 		
@@ -111,7 +110,12 @@ $(function( $ ) {
 			var view = new App.Views.Story({
 				model: story
 			});
-			stories.prepend(view.render().el);
+			stories.prepend(view.render().el).hide().fadeIn('slow');;
+		},
+		
+		destroy: function() {
+			$(this.el).empty();
+			this.unbind();
 		}
 	});
 });

@@ -25,7 +25,7 @@ $(function( $ ) {
 		
 		render: function() {
 			var renderedContent = this.template();
-			$(this.el).html(renderedContent).fadeIn('slow');
+			$(this.el).html(renderedContent).hide().fadeIn('slow');
 			return this;
 		},
 		
@@ -95,6 +95,10 @@ $(function( $ ) {
 				}
 			});
 			return false;
-		}	
+		},
+		
+		destroy: function() {
+			this.unbind();
+		}
 	});
 });

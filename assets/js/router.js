@@ -48,6 +48,14 @@ $(function( $ ) {
         },
         
         story: function(id) {
+        	if (App.Views.share) {
+	        	App.Views.share.destroy();
+        	}
+        	
+        	if (App.Views.shared) {
+	        	App.Views.shared.destroy();
+        	}
+        
 	        var shareStory = new App.Models.Story();
 	        shareStory.fetch({
 	        	url: 'assets/php/crud.php?id=' + id,

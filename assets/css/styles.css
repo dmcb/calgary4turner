@@ -58,12 +58,12 @@ body {
     cursor: pointer; }
     body button:hover {
       background-color: #fff; }
-  body > div#content > div {
+  body > div#content {
+    background-color: #43432a;
     max-width: 872px;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px;
-    background-color: #43432a; }
+    padding: 8px; }
     body > div#content > div#header img {
       width: 100%; }
     body > div#content > div#share {
@@ -115,7 +115,10 @@ body {
       padding-bottom: 1em;
       color: #a0a082; }
       body > div#content > div#footer p {
-        text-align: left; }
+        text-align: left;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto; }
       body > div#content > div#footer ul {
         display: block;
         padding: 0;
@@ -156,9 +159,11 @@ body {
       max-width: 100%; }
     body textarea {
       height: 48px; }
-    body > div#content > div {
+    body > div#content {
       padding: 4px; }
       body > div#content > div#shared .story {
         width: 100%; }
         body > div#content > div#shared .story + .story {
-          border-top: #55553f solid 4px; } }
+          border-top: #55553f solid 4px; }
+      body > div#content > div#footer p {
+        width: 100%; } }
