@@ -42,7 +42,7 @@ $(function( $ ) {
 		template: _.template($('#shared-template').html()),
 		
 		events: {
-			"click #more": "loadStories",
+			"click #more": "loadStories"
 		},
 		
 		initialize: function() {

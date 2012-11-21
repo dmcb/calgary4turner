@@ -14,6 +14,8 @@ body {
     text-decoration: none; }
     body a:hover {
       text-decoration: underline; }
+    body a img {
+      border: 0; }
   body h2 {
     font-family: "freight-sans-pro";
     font-weight: 700;
@@ -34,7 +36,11 @@ body {
     float: center;
     clear: both;
     font-family: "freight-sans-pro";
-    font-weight: 300; }
+    font-weight: 300;
+    transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease; }
     body input.error, body textarea.error, body button.error {
       border: 2px solid #a9cd44; }
   body label.error {
@@ -43,7 +49,8 @@ body {
     font-family: "freight-sans-pro";
     font-weight: 300; }
   body textarea {
-    height: 128px; }
+    height: 128px;
+    overflow: auto; }
   body button {
     background-color: #a9cd44;
     max-width: 128px;
@@ -97,7 +104,8 @@ body {
       body > div#footer ul {
         display: block;
         padding: 0 0 2em 0;
-        margin: 0; }
+        margin: 0;
+        list-style: none; }
         body > div#footer ul li {
           display: inline-block;
           font-family: "freight-sans-pro"; }

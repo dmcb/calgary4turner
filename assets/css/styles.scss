@@ -1,3 +1,10 @@
+@mixin easing {
+	transition: 0.3s ease;
+	-moz-transition: 0.3s ease;
+	-webkit-transition: 0.3s ease;
+	-o-transition: 0.3s ease;
+}
+
 body {
 	font-family: "ff-tisa-web-pro";
 	font-size: 16px;
@@ -16,6 +23,10 @@ body {
 		
 		&:hover {
 			text-decoration: underline;
+		}
+		
+		img {
+			border: 0;
 		}
 	}
 	
@@ -42,6 +53,7 @@ body {
 		clear: both;
 		font-family: "freight-sans-pro";
 		font-weight: 300;
+		@include easing;
 		
 		&.error {
 			border: 2px solid #a9cd44;
@@ -57,6 +69,7 @@ body {
 	
 	textarea {
 		height: 128px;
+		overflow: auto;
 	}
 	
 	button {
@@ -146,6 +159,7 @@ body {
 				display: block;
 				padding: 0 0 2em 0;
 				margin: 0;
+				list-style: none;
 				
 				li {
 					display: inline-block;
