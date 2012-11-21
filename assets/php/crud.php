@@ -10,7 +10,7 @@
 	
 	    if (!$result) 
 	    {
-	        $response['error']['failure'] = "Could not execute query ".$query.". ".mysql_error();
+	        $response['error']['general'] = "Could not execute query ".$query.". ".mysql_error();
 	    }
 	    return $result;
 	}
@@ -19,7 +19,7 @@
 	$connection = @mysql_connect($db_host, $db_user, $db_password);
 	if (!$connection) 
 	{
-		$response['error']['failure'] = "Could not connect to database server. ".mysql_error();
+		$response['error']['general'] = "Could not connect to database server. ".mysql_error();
 	} 
 	else 
 	{
@@ -27,7 +27,7 @@
 		
 		if (!$database) 
 		{
-			$response['error']['failure'] = "Could not open database. ".mysql_error();
+			$response['error']['general'] = "Could not open database. ".mysql_error();
 		} 
 	}
 
@@ -79,15 +79,23 @@
 			// No errors in the data, do post
 			if (!isset($response['error']))
 			{
-				
-				if (execute_query("INSERT INTO story (name, email, story, ip, date) VALUES ('".mysql_real_escape_string(strip_tags($_POST['name']))."','".mysql_real_escape_string($_POST['email'])."','".mysql_real_escape_string(strip_tags($_POST['story']))."','".$_SERVER['REMOTE_ADDR']."',now())")) 
+				// Check if user did a post within the hour
+				$query = execute_query("SELECT id FROM story WHERE (ip = '".$_SERVER['REMOTE_ADDR']."' OR email = '".mysql_real_escape_string($_POST['email'])."') AND date > DATE_SUB(NOW(), INTERVAL 1 hour)");
+				if ($query) 
 				{
-					$result = execute_query("SELECT * FROM story WHERE id = ".mysql_insert_id());
-					$row = @mysql_fetch_array($result);
-					$response['success']['id'] = $row['id'];
-					$response['success']['name'] = $row['name'];
-					$response['success']['date'] = date("g:i a, F jS", strtotime($row['date']));
-					$response['success']['story'] = preg_replace("/(\n)+/","</p><p>", $row['story']);
+					if (mysql_num_rows($query))
+					{
+						$response['error']['general'] = "We love your enthusiasm for Chris Turner, but you've recently posted your story. Please let everyone else have a turn to share their story!";
+					}
+					else if (execute_query("INSERT INTO story (name, email, story, ip, date) VALUES ('".mysql_real_escape_string(strip_tags($_POST['name']))."','".mysql_real_escape_string($_POST['email'])."','".mysql_real_escape_string(strip_tags($_POST['story']))."','".$_SERVER['REMOTE_ADDR']."',now())")) 
+					{
+						$result = execute_query("SELECT * FROM story WHERE id = ".mysql_insert_id());
+						$row = @mysql_fetch_array($result);
+						$response['success']['id'] = $row['id'];
+						$response['success']['name'] = $row['name'];
+						$response['success']['date'] = date("g:i a, F jS", strtotime($row['date']));
+						$response['success']['story'] = preg_replace("/(\n)+/","</p><p>", $row['story']);
+					}
 				}
 			}
 	

@@ -73,7 +73,7 @@ $(function( $ ) {
 						$("#send").attr("disabled", false);
 						$("#send").html("Send");
 						
-						var fields = ['name', 'email', 'story'];
+						var fields = ['name', 'email', 'story', 'general'];
 						for (var i=0; i < fields.length; i++) {
 							if (response.error[fields[i]]) {
 								$("#" + fields[i]).addClass("error");
