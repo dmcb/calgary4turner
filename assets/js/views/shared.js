@@ -12,6 +12,10 @@ $(function( $ ) {
 		el: "#share",
 		template: _.template($('#share-story-template').html()),
 		
+		events: {
+			"click #write": "write"
+		},
+		
 		initialize: function() {
 			_.bindAll(this);
 			this.render();
@@ -35,8 +39,8 @@ $(function( $ ) {
 			catch(ex){};
 		},
 		
-		share: function() {
-			App.router.navigate(this.model.get('id'));
+		write: function() {
+			App.router.navigate('/', {trigger: true});
 		}
 	});
 

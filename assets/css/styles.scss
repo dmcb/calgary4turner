@@ -121,6 +121,15 @@ body {
 					clear: both;
 					margin-top: 0.5em;
 				}
+				
+				.facebook {
+					margin-bottom: 1em;
+				}
+				
+				.input {
+					width: 100%;
+					clear: both;
+				}
 			}
 			
 			&#shared {
@@ -251,6 +260,16 @@ body {
 			padding: 4px;
 			
 			> div {
+				&#share {
+					p, .date {
+						width: 100%;
+					}
+					
+					.twitter, .facebook {
+						margin-left: 0;
+					}
+				}
+				
 				&#shared .story {
 					width: 100%;
 					

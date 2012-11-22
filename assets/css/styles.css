@@ -84,6 +84,11 @@ body {
         margin-left: 10%;
         clear: both;
         margin-top: 0.5em; }
+      body > div#content > div#share .facebook {
+        margin-bottom: 1em; }
+      body > div#content > div#share .input {
+        width: 100%;
+        clear: both; }
     body > div#content > div#shared .story {
       width: 80%;
       margin-left: auto;
@@ -162,6 +167,10 @@ body {
       height: 48px; }
     body > div#content {
       padding: 4px; }
+      body > div#content > div#share p, body > div#content > div#share .date {
+        width: 100%; }
+      body > div#content > div#share .twitter, body > div#content > div#share .facebook {
+        margin-left: 0; }
       body > div#content > div#shared .story {
         width: 100%; }
         body > div#content > div#shared .story + .story {
