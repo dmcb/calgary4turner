@@ -80,7 +80,7 @@
 			if (!isset($response['error']))
 			{
 				// Check if user did a post within the hour
-				$query = execute_query("SELECT id FROM story WHERE (ip = '".$_SERVER['REMOTE_ADDR']."' OR email = '".mysql_real_escape_string($_POST['email'])."') AND date > DATE_SUB(NOW(), INTERVAL 1 hour)");
+				$query = execute_query("SELECT id FROM story WHERE (ip = '".$_SERVER['REMOTE_ADDR']."' OR email = '".mysql_real_escape_string($_POST['email'])."') AND date > DATE_SUB(NOW(), INTERVAL 2 MINUTE)");
 				if ($query) 
 				{
 					if (mysql_num_rows($query))
