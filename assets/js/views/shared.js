@@ -41,6 +41,7 @@ $(function( $ ) {
 		
 		write: function() {
 			App.router.navigate('/', {trigger: true});
+			window.scrollTo(0, 0);
 		}
 	});
 
@@ -70,6 +71,7 @@ $(function( $ ) {
 		
 		share: function() {
 			App.router.navigate(this.model.get('id'), {trigger: true});
+			window.scrollTo(0, 0);
 		}
 	});
 	
