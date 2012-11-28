@@ -159,10 +159,12 @@ body {
   body {
     font-size: 12px;
     text-shadow: 1px 1px #363621; }
-    body input, body textarea, body button {
-      width: 100%; }
+    body input, body textarea {
+      width: 98%; }
     body button {
-      max-width: 100%; }
+      max-width: 100%;
+      width: 100%;
+      border: 0; }
     body textarea {
       height: 48px; }
     body > div#content {

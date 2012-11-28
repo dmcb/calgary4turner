@@ -244,12 +244,14 @@ body {
 		font-size: 12px;
 		text-shadow: 1px 1px #363621;
 					
-		input, textarea, button {
-			width: 100%;
+		input, textarea {
+			width: 98%;
 		}
 		
 		button {
 			max-width: 100%;
+			width: 100%;
+			border: 0;
 		}
 		
 		textarea {

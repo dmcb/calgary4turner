@@ -75,6 +75,9 @@
 					$response['error'][$field] = 'A valid email address is required.';
 				}
 			}
+			
+			// Block submissions - the election is over :(
+			$response['error']['general'] = "Thanks so much for your support for Chris, but submissions are now closed.";
 		
 			// No errors in the data, do post
 			if (!isset($response['error']))
